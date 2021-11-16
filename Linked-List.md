@@ -1,8 +1,8 @@
 # Linked List
 
 It is the collection of nodes, where each nodes contain data and pointer to next node.
+![image](https://user-images.githubusercontent.com/80917122/142045323-292326fd-ae3d-409d-bf63-f1010bdf00ec.png)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3826f50b-1d7a-4403-966c-884dd80a3a79/Untitled.png)
 
 Here in the given Example there are 4 nodes each node contains a value and a address of memory in which that value is stored and that is linked by a pointer to the same type of next node
 
@@ -12,7 +12,7 @@ Head pointer : it is the pointer pointing the first node in an given linked list
 
 Node Structure
 
-```jsx
+```cpp
 #include<iostream>
 using namespace std;
 
@@ -50,7 +50,8 @@ It is 4 Step process:
 3. linking next of new node to old head 
 4. making new head 
 
-![Untitled-2021-11-16-2255.svg](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/64a5b0da-2308-4a00-ad08-dab59d65e07b/Untitled-2021-11-16-2255.svg)
+![image](https://user-images.githubusercontent.com/80917122/142045384-fe9c1c63-b033-45d7-b28c-759716861c8f.png)
+
 
 ```cpp
 void push(Node** head_ref, int new_data)
@@ -81,7 +82,8 @@ B. Insertion after a Given Node:
 4. changing prev_node next to new_node  next 
 5. changing prev_node to new node 
 
-![Untitled-2021-11-16-2255.svg](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/139fe8ac-58c9-4599-a828-98953d99ef82/Untitled-2021-11-16-2255.svg)
+![image](https://user-images.githubusercontent.com/80917122/142045446-3636ee67-9deb-43de-bf59-8920a84e0a73.png)
+
 
 ```cpp
 void insertAfter(Node* prev_node, int new_data)
@@ -125,8 +127,8 @@ C. Insertion at the end
 4. If ( ll is empty make new_node as head) 
 5. else( traverse till the last of ll) 
 6. Changing the next of last node 
+![image](https://user-images.githubusercontent.com/80917122/142045484-4fe12afa-2108-4a74-a993-f1ce7f6c335f.png)
 
-![Untitled-2021-11-16-2255.svg](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9db989c7-9f10-44bf-8cf9-0f108cabc860/Untitled-2021-11-16-2255.svg)
 
 ```cpp
 // Given a reference (pointer to pointer) to the head 
