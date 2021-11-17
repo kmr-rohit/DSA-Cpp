@@ -38,14 +38,6 @@ void push(Node** head_ref, int new_data){
     (*head_ref) = new_node;
 }
 
-void printNode(class Node *head){
-      while(head != NULL){
-          cout <<head->data << "->";
-          head = head->next;
-      }
-      cout << "NULL" << endl;
-  }
-     
 void findmiddle(Node* head ){
   Node* slow = head;
   Node* fast = head; 
