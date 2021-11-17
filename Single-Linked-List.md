@@ -1,4 +1,4 @@
-# Linked List
+# Single Linked List
 
 It is the collection of nodes, where each nodes contain data and pointer to next node.
 ![image](https://user-images.githubusercontent.com/80917122/142045323-292326fd-ae3d-409d-bf63-f1010bdf00ec.png)
