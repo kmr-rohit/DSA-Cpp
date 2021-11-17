@@ -79,7 +79,7 @@ B. Insertion after a Given Node:
 1. checking if(prev node ) == null
 2. allocating a new node 
 3. setting val to data 
-4. changing prev_node next to new_node  next 
+4. changing new_node next to prev_node next 
 5. changing prev_node to new node 
 
 ![image](https://user-images.githubusercontent.com/80917122/142045446-3636ee67-9deb-43de-bf59-8920a84e0a73.png)
