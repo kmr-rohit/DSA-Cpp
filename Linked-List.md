@@ -171,3 +171,168 @@ void append(Node** head_ref, int new_data)
 ```
 
 Time complexity of append is O(n) where n is the number of nodes in the linked list. Since there is a loop from head to end, the function does O(n) work.
+
+
+### Deletion.
+
+Deletion in linked list  can be done in 2 ways 
+
+1. Deleting a given key 
+2. Deleting a  key at a given position 
+
+**Deleting a given key**
+
+*Given a ‘key’, delete the first occurrence of this key in the linked list*.
+
+**Iterative Method:**
+
+To delete a node from the linked list, we need to do the following steps.
+
+1) Find the previous node of the node to be deleted.
+
+2) Change the next of the previous node.
+
+3) Free memory for the node to be delete
+
+```cpp
+// Given a reference (pointer to pointer)
+// to the head of a list and a key, deletes
+// the first occurrence of key in linked list
+void deleteNode(Node** head_ref, int key)
+{
+     
+    // Store head node
+    Node* temp = *head_ref;
+    Node* prev = NULL;
+     
+    // If head node itself holds
+    // the key to be deleted
+    if (temp != NULL && temp->data == key)
+    {
+        *head_ref = temp->next; // Changed head
+        delete temp;            // free old head
+        return;
+    }
+ 
+    // Else Search for the key to be deleted,
+    // keep track of the previous node as we
+    // need to change 'prev->next' */
+      else
+    {
+    while (temp != NULL && temp->data != key)
+    {
+        prev = temp;
+        temp = temp->next;
+    }
+ 
+    // If key was not present in linked list
+    if (temp == NULL)
+        return;
+ 
+    // Unlink the node from linked list
+    prev->next = temp->next;
+ 
+    // Free memory
+    delete temp;
+    }
+    
+}
+```
+
+**Recursive Method:**
+
+To delete a node of a linked list recursively we need to do the following steps.
+
+1.We pass node* (node pointer) as a reference to the function (as in node* &head)
+
+2.Now since current node pointer is derived from previous node’s next (which is passed by reference) so now if the value of the current node pointer is changed, previous next node’s value also gets changed which is the required operation while deleting a node (i.e points previous node’s next to current node’s (containing key) next).
+
+3.Find the node containing the given value.
+
+4.Store this node to deallocate it later using free() function.
+
+5.Change this node pointer so that it points to it’s next and by performing this previous node’s next also get properly linked.
+
+![image](https://user-images.githubusercontent.com/80917122/142129282-8e400a5d-bc38-446a-8200-42af8a40920d.png)
+
+
+```cpp
+/*
+Deletes the node containing 'info' part as val and
+alter the head of the linked list (recursive method)
+*/
+void deleteNode(node*& head, int val)
+{
+     
+    // Check if list is empty or we
+    // reach at the end of the
+    // list.
+    if (head == NULL) {
+        cout << "Element not present in the list\n";
+        return;
+    }
+    // If current node is the node to be deleted
+    if (head->info == val) {
+        node* t = head;
+        head = head->link; // If it's start of the node head
+                           // node points to second node
+        delete (t); // Else changes previous node's link to
+                    // current node's link
+        return;
+    }
+    dele
+```
+
+
+Deleting a key at given position.
+
+Given a singly linked list and a position, delete a linked list node at the given position.
+
+If the node to be deleted is the root, simply delete it. To delete a middle node, we must have a pointer to the node previous to the node to be deleted. So if positions are not zero, we run a loop position-1 times and get a pointer to the previous node.
+
+```cpp
+// Given a reference (pointer to pointer) to
+// the head of a list and a position, deletes
+// the node at the given position 
+void deleteNode(Node **head_ref, int position)
+{
+      
+    // If linked list is empty
+    if (*head_ref == NULL)
+        return;
+      
+    // Store head node
+    Node* temp = *head_ref;
+  
+    // If head needs to be removed
+    if (position == 0)
+    {
+          
+        // Change head
+        *head_ref = temp->next; 
+          
+        // Free old head
+        free(temp);             
+        return;
+    }
+  
+    // Find previous node of the node to be deleted
+    for(int i = 0; temp != NULL && i < position - 1; i++)
+        temp = temp->next;
+  
+    // If position is more than number of nodes
+    if (temp == NULL || temp->next == NULL)
+        return;
+  
+    // Node temp->next is the node to be deleted
+    // Store pointer to the next of node to be deleted
+     Node *next = temp->next->next;
+  
+    // Unlink the node from linked list
+    free(temp->next); // Free memory
+      
+    // Unlink the deleted node from list
+    temp->next = next; 
+}
+```
+
