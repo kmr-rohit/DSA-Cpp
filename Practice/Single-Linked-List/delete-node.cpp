@@ -33,10 +33,10 @@ void print(Node *head)
 }
 
 void deletenode(Node * given){
-  Node * temp = given->next;
-  given->data = temp->data;
-  given->next = temp->next;
-  delete temp;
+  
+  given->data = given->next->data;
+  given->next = given->next->next;
+  
 
 }
 
@@ -47,7 +47,7 @@ int main(){
   push(&head, 3);
   push(&head, 2);
   push(&head, 1);
-  Node* given = head->next->next;
+  Node* given = head;
   deletenode( given );
   print(head);
 
