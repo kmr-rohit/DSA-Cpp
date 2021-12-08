@@ -2,7 +2,7 @@
 // example1: input: 1-2-3-4-5-6
 //          output: 1-2-3-6-5-4
 // example2: input: 1-2-3-4-5
-//         output: 1-2-5-4-3
+//         output: 1-2-3-5-4
 
 #include <bits/stdc++.h>
 using namespace std;
