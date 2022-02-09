@@ -1,12 +1,12 @@
 /* Level Order Traversal of a given binary tree 
   For Example : 
-   Input:     2
+   Input:     1
             /  \
-          3     4
+          2     3
         /  \   /  \ 
-      5    6  7    8 
+      4    5  6    7 
 
-    Output : [[2] , [3 ,4] , [5,6,7,8]]
+    Output : [[1] , [2 ,3] , [4,5,6,]]
 
   Approach : Idea is to use 2 queue's one to store root val and other to store its childern val;
               Iterate over fist q and append all elements of queue to ans list , then append q1 with all 
