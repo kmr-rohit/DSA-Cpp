@@ -36,19 +36,19 @@ struct Node{
         return !root->left && !root->right;
     }
 
-void leftboundary(Node* root , vector<int>res){
+void leftboundary(Node* root , vector<int> &res){
   Node* curr = root->left;
   while(curr){
   if(!isLeaf(curr)){res.push_back(curr->val);}
-  if(!curr->left){
+  if(curr->left){
     curr = curr->left;
   }
   else{
     curr = curr->right;
   }
+  }
 }
-}
-void leaves(Node*root , vector<int>res){
+void leaves(Node*root , vector<int> &res){
   if(isLeaf(root)){
     res.push_back(root->val);
     return;
@@ -57,8 +57,8 @@ void leaves(Node*root , vector<int>res){
   if(root->right)leaves(root->right ,res);
  
 }
-void rightboundary(Node*root , vector<int> res){
-  Node * curr = root->right;
+void rightboundary(Node*root , vector<int> &res){
+  Node *curr = root->right;
   vector<int> temp; // for reversing elememts of right boundary we have to use another vector
   while(curr){
     if(!isLeaf(curr))temp.push_back(curr->val);
@@ -72,19 +72,8 @@ void rightboundary(Node*root , vector<int> res){
   }
 }
 
-vector<int>printBoundary(Node*root){
-  vector<int> res;
-  if(!isLeaf(root)){
-    res.push_back(root->val);
-  }
-  leftboundary(root , res);
-  leaves(root , res);
-  rightboundary(root , res);
-  for(int i = 0 ; i< res.size() ;i++ ){
-    cout<<res[i]<<endl;
-  }
-  return res;
-}
+
+
 int main()
 {
   Node * root = new Node(1);
@@ -98,6 +87,17 @@ int main()
   root->right->right->left = new Node(9);
   root->right->right->left->left = new Node(10);
   root->right->right->left->right = new Node(11);
-  printBoundary(root);
+  vector<int> res;
+  if(!isLeaf(root)){
+    res.push_back(root->val);
+  }
+  leftboundary(root , res);
+  leaves(root , res);
+  rightboundary(root , res);
+  
+  for(int i = 0 ; i< res.size()  ; i++){
+    cout<<res[i]<<" ";
+
+  }
   
 }
