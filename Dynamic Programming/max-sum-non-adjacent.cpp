@@ -15,7 +15,7 @@
 // 5
 // 11
 
-// Recursive Approach 
+// memoization 
 
 int maximumNonAdjacentSumSolve(vector<int> &nums , int ind , vector<int> dp){
     if(dp[ind]!=-1) return dp[ind];
