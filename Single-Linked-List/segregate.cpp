@@ -31,5 +31,7 @@ int main(){
     
   }
 
+  print(head);
+
 
 }
