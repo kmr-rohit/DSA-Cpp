@@ -31,3 +31,9 @@ int main(){
   return 0;
 
 }
+
+// Time complexity:
+//   Best  =Omega(n)
+// Average = Wrost = O(n^2);
+// Space Complexity:
+//   O(1);
