@@ -1,5 +1,5 @@
-Bubble Sort : 
-  Basic::
+<h2>Bubble Sort : </h2>
+  <p>Basic::
     bubbleSort(array)
       for i <- 1 to indexOfLastUnsortedElement-1
         if leftElement > rightElement
@@ -21,6 +21,7 @@ Bubble Sort :
      Space Complexity:
        O(1);
      No of Comparision : n(n-1)/2;
+    </p>
 
 Selection Sort: 
 
