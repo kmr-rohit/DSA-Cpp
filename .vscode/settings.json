@@ -7,7 +7,8 @@
     "cstdlib": "cpp",
     "iostream": "cpp",
     "new": "cpp",
-    "map": "cpp"
+    "map": "cpp",
+    "functional": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }
