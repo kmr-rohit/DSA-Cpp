@@ -123,7 +123,7 @@ int knapsack(vector<int>& wt, vector<int>& val, int n, int W){
                 
             dp[ind][cap] = max(notTaken, taken);
         }
-    }s
+    }
     
     return dp[n-1][W];
 }
