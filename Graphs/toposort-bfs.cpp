@@ -56,7 +56,7 @@ int check(int V, vector <int> &res, vector<int> adj[]) {
     vector<int> map(V, -1);
     for (int i = 0; i < V; i++) {
         map[res[i]] = i;
-    }
+    }  
     for (int i = 0; i < V; i++) {
         for (int v : adj[i]) {
             if (map[i] > map[v]) return 0;

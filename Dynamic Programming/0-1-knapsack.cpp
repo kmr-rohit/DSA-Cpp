@@ -138,3 +138,7 @@ int main() {
                                  
   cout<<"The Maximum value of items, thief can steal is " <<knapsack(wt,val,n,W);
 }
+
+ // Space Optimisation 
+
+ 

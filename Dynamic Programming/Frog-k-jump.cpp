@@ -102,5 +102,40 @@ int main(){
 
 }
 
+//Tabulation 
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+  int n;
+  cin>>n;
+  int k;
+  cin>>k;
+  vector<int>heights;
+  for(int i = 0;i<n;i++){
+    int temp;
+    cin>>temp;
+    heights.push_back(temp);
+  }
+  
+  vector<int> dp(n+1, -1);
+ 
+  dp[0] = 0;
+  for(int i = 1;i<n;i++){
+    int maxSteps = INT_MAX;
+     for(int j = 1;j<=k;j++){
+      if(i-j>=0){
+        int jump = dp[i-j] + abs(heights[i] - heights[i-j]);
+        maxSteps = min(jump , maxSteps);
+      }
+      
+     }
+     dp[i] = maxSteps;
+  }
+  cout<<dp[n-1]<<endl;
+
+}
+
 
 
